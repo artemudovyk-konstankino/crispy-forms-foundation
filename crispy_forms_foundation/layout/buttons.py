@@ -16,7 +16,7 @@ from crispy_forms import layout as crispy_forms_layout
 
 
 __all__ = [
-    'ButtonHolder', 'ButtonHolderCallout', 'ButtonGroup',
+    'ButtonHolder', 'ButtonHolderPanel', 'ButtonHolderCallout', 'ButtonGroup',
     'Button', 'Submit', 'Reset',
     'InputButton', 'InputSubmit', 'InputReset',
     'ButtonElement', 'ButtonSubmit', 'ButtonReset',
@@ -41,6 +41,16 @@ class ButtonHolder(crispy_forms_layout.ButtonHolder):
         )
     """
     template = "%s/layout/buttonholder.html"
+   
+   
+class ButtonHolderPanel(ButtonHolder):
+    """
+    Act like ``ButtonHolder`` but add a ``panel`` class name on the main
+    ``div``.
+    """
+    def __init__(self, field, *args, **kwargs):
+        kwargs['css_class'] = kwargs.get('css_class', '')+' panel'
+        super(ButtonHolderPanel, self).__init__(field, *args, **kwargs)
 
 
 class ButtonHolderCallout(ButtonHolder):
