@@ -17,7 +17,7 @@ from .fields import (  # noqa: F401
     InlineSwitchField, FakeField, Hidden
 )
 from .buttons import (  # noqa: F401
-    ButtonHolder, ButtonHolderCallout, ButtonGroup,
+    ButtonHolder, ButtonHolderPanel, ButtonHolderCallout, ButtonGroup,
     Button, Submit, Reset,
     InputButton, InputSubmit, InputReset,
     ButtonElement, ButtonSubmit, ButtonReset
